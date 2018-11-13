@@ -9,10 +9,7 @@ def norm_arr(arr):
 
 def norm_df(df, column_name):
     result = df.copy()
-
-
     result[column_name] = norm_arr(result[column_name])
-
     return result
 
 df = pd.read_csv('titanic.csv', sep=',') # load date from file
@@ -34,4 +31,5 @@ myseries = norm_df(df1,'Age') # add new column with normalization data fillna - 
 #norm_arr(df1['Age'])
 #df1['Age'].iloc[0:3].replace(1000)
 print(myseries.Age)
+print
 
