@@ -2,6 +2,8 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.svm import SVC
 import pickle
 
+# ЭТАП 2
+# Обучение моделей
 args = {
   #path to serialized db of facial embeddings
   "embeddings": "face/output/embeddings.pickle",

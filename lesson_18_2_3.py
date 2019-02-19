@@ -4,6 +4,7 @@ import pickle
 import cv2
 import os
 
+#ЭТАП 3 определение лица на обученной модели
 args = {
   #path to OpenCV's deep learning face detector
   "detector": "face/face_detection_model",
