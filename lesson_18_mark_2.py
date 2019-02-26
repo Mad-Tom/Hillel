@@ -26,20 +26,29 @@ labels = le.fit_transform(data["names"])
 # then produce the actual face recognition
 print("[INFO] training model...")
 
-# метод опорных векторов
-recognizer = SVC(C=1.0, kernel="linear", probability=True)
+# Naive Bayes
+from sklearn.naive_bayes import GaussianNB
+recognizer = GaussianNB()
 recognizer.fit(data["embeddings"], labels)
 
+
+
 '''
+
+from sklearn.neighbors import KNeighborsClassifier
+recognizer = KNeighborsClassifier(n_neighbors=5)
+recognizer.fit(data["embeddings"], labels)
+
 # логистическая регрессия
 from sklearn.linear_model import LogisticRegression
 recognizer = LogisticRegression()
 recognizer.fit(data["embeddings"], labels)
 
-# Naive Bayes 
-from sklearn.naive_bayes import GaussianNB
-recognizer = GaussianNB()
+# метод опорных векторов
+recognizer = SVC(C=1.0, kernel="rbf", probability=True)
 recognizer.fit(data["embeddings"], labels)
+
+
 '''
 
 # write the actual face recognition model to disk
